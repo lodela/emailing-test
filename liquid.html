@@ -1,0 +1,162 @@
+{% assign data = { "geo_id": "562", "geo_name": "Barcelona", "geo_image":
+"https://cdn.tripadvisor.com/img2/email/vr/aps5-2_barcelona.jpg", "geo_link":
+"https://www.viator.com/collections/Hidden-Gems-in-Barcelona/c7",
+"recommended_products": [ { "product_code": "2140BCNHOP", "product_name":
+"Barcelona City Tour Hop-On Hop-Off", "product_rating": "4.5",
+"product_photo_url":
+"https://media.tacdn.com/media/attractions-splice-spp-360x240/07/1e/c1/f3.jpg",
+"product_link": "https://www.viator.com/tours/x/x/d0-2140BCNHOP",
+"product_review_count": "1864" }, { "product_code": "2916BARCELONA",
+"product_name": "City Sightseeing Barcelona Hop-On Hop-Off Bus Tour",
+"product_rating": "4.0", "product_photo_url":
+"https://media.tacdn.com/media/attractions-splice-spp-360x240/06/70/7f/a3.jpg",
+"product_link": "https://www.viator.com/tours/x/x/d0-2916BARCELONA",
+"product_review_count": "2648" }, { "product_code": "5716P2", "product_name":
+"Montserrat Tour from Barcelona Including Lunch and Gourmet Wine Tasting",
+"product_rating": "5.0", "product_photo_url":
+"https://media.tacdn.com/media/attractions-splice-spp-360x240/06/71/9c/84.jpg",
+"product_link": "https://www.viator.com/tours/x/x/d0-5716P2",
+"product_review_count": "1502" } ] } %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Explore the unexpected in Barcelona</title>
+    <style type="text/css">
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td bgcolor="white" align="center">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="600"
+            style="border-collapse: collapse"
+          >
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-size: 11px;
+                  font-family: Roboto, Arial, Helvetica, sans-serif;
+                  line-height: 15px;
+                  text-align: left;
+                  padding-top: 8px;
+                  padding-left: 10px;
+                  padding-bottom: 8px;
+                "
+              >
+                <a
+                  name="readonline"
+                  href="https://codepen.io/lodela/full/yLRMjGx"
+                  xt="SPCLICKTOVIEW"
+                  target="_blank"
+                  style="text-decoration: underline; color: #4990e2"
+                  id="readonline"
+                >
+                  Read Online
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#F7F7F7">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="600"
+            style="border-collapse: collapse"
+          >
+            <tr>
+              <td align="center" valign="top" style="padding: 30px 0">
+                <h2
+                  style="
+                    font-family: 'Roboto', sans-serif;
+                    color: #36332d;
+                    font-size: 28px;
+                    font-weight: 600;
+                    text-align: center;
+                    margin: 0 0 30px 0;
+                  "
+                >
+                  Recommended Products
+                </h2>
+                <table
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
+                  style="border-collapse: collapse"
+                >
+                  #foreach($product in $data.recommended_products)
+                  <tr>
+                    <td width="200" valign="top" style="padding: 0 0 10px 0">
+                      <a href="${product.product_link}" target="_blank">
+                        <img
+                          src="${product.product_photo_url}"
+                          alt="${product.product_name}"
+                          width="200"
+                          height="150"
+                          style="display: block"
+                        />
+                      </a>
+                    </td>
+                    <td valign="top" style="padding: 0 0 10px 20px">
+                      <h3
+                        style="
+                          font-family: 'Roboto', sans-serif;
+                          color: #36332d;
+                          font-size: 22px;
+                          font-weight: 600;
+                          margin: 0 0 10px 0;
+                        "
+                      >
+                        <a
+                          href="${product.product_link}"
+                          target="_blank"
+                          style="text-decoration: none; color: #36332d"
+                          >${product.product_name}</a
+                        >
+                      </h3>
+                      <p
+                        style="
+                          font-size: 16px;
+                          line-height: 24px;
+                          color: #36332d;
+                          margin: 0 0 5px 0;
+                        "
+                      >
+                        ${product.product_rating} out of 5 stars
+                      </p>
+                      <p
+                        style="
+                          font-size: 12px;
+                          line-height: 24px;
+                          color: #999999;
+                          margin: 0 0 5px 0;
+                        "
+                      >
+                        based on ${product.product_review_count} reviews
+                      </p>
+                    </td>
+                  </tr>
+                  #end
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
